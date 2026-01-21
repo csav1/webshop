@@ -1,0 +1,26 @@
+# NBA Webshop - robots.txt
+# https://www.robotstxt.org/
+
+User-agent: *
+
+# Erlaubte Bereiche
+Allow: /
+Allow: /produkte
+Allow: /produkt/
+Allow: /kategorie/
+
+# Gesperrte Bereiche
+Disallow: /admin/
+Disallow: /warenkorb
+Disallow: /kasse
+Disallow: /bestellungen
+Disallow: /profil
+Disallow: /anmelden
+Disallow: /registrieren
+Disallow: /abmelden
+
+# Crawl-Delay (optional, für schonenden Crawl)
+Crawl-delay: 1
+
+# Sitemap (wenn vorhanden)
+Sitemap: /sitemap.xml

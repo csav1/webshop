@@ -1,0 +1,101 @@
+2026-01-12 19:12:44 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 19:23:08 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 19:23:31 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 19:27:19 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 20:16:57 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 20:17:11 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 20:18:08 Register Start
+Validation Failed: Array
+(
+    [password] => Das Passwort muss mindestens 8 Zeichen, einen Großbuchstaben und eine Zahl enthalten.
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 20:18:25 Register Start
+Validation Failed: Array
+(
+    [password_confirmation] => Die Bestätigung für Password confirmation stimmt nicht überein.
+)
+
+2026-01-12 20:21:43 Register Start
+User Created: 7
+User Logged In
+2026-01-12 21:14:28 Register Start
+Validation Failed: Array
+(
+    [password] => Das Passwort muss mindestens 8 Zeichen, einen Großbuchstaben und eine Zahl enthalten.
+)
+
+2026-01-12 21:17:20 Register Start
+User Created: 16
+User Logged In
+2026-01-14 13:00:01 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:00:01 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-14 13:02:49 [AuthController] Callback received. Code present: YES
+2026-01-14 13:02:49 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:02:49 [AuthController] Exception in Callback: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'csava5940@gmail.com' for key 'email'
+2026-01-14 13:02:55 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:02:55 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-14 13:03:11 [AuthController] Callback received. Code present: YES
+2026-01-14 13:03:11 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:03:11 [AuthController] Exception in Callback: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'csava5940@gmail.com' for key 'email'
+2026-01-14 13:04:38 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:04:38 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-14 13:04:40 [AuthController] Callback received. Code present: YES
+2026-01-14 13:04:40 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:05:49 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:05:49 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-14 13:05:51 [AuthController] Callback received. Code present: YES
+2026-01-14 13:05:51 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:10:26 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:10:26 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-14 13:10:28 [AuthController] Callback received. Code present: YES
+2026-01-14 13:10:28 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:14:03 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-14 13:14:03 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-14 13:14:05 [AuthController] Callback received. Code present: YES
+2026-01-14 13:14:05 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-15 08:52:15 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-15 08:52:15 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-15 08:52:34 [AuthController] Callback received. Code present: YES
+2026-01-15 08:52:34 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-19 17:18:16 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-19 17:18:16 [AuthController] Redirecting to Google: https://accounts.google.com/o/oauth2/auth?client_id=692394777656-grvjn6f6oav3nscu2rlq4mf50va64ecp.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%2Fwebshop%2Fpublic%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email+profile&access_type=online&prompt=select_account
+2026-01-19 17:18:18 [AuthController] Callback received. Code present: YES
+2026-01-19 17:18:18 [GoogleAuthService] Constructed Redirect URI: http://localhost/webshop/public/auth/google/callback
+2026-01-21 04:49:13 [GoogleAuthService] Raw Redirect URI: 
+2026-01-21 04:49:13 [AuthController] Error in googleRedirect: Google Client ID not configured.
+2026-01-21 04:49:21 [GoogleAuthService] Raw Redirect URI: 
+2026-01-21 04:49:21 [AuthController] Error in googleRedirect: Google Client ID not configured.
+2026-01-21 04:49:28 [GoogleAuthService] Raw Redirect URI: 
+2026-01-21 04:49:28 [AuthController] Error in googleRedirect: Google Client ID not configured.
