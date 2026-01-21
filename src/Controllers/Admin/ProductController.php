@@ -89,8 +89,8 @@ class ProductController
             'stock' => (int) $_POST['stock'],
             'sku' => $_POST['sku'] ?? null,
             'image' => $imageName,
-            'is_active' => isset($_POST['is_active']),
-            'is_featured' => isset($_POST['is_featured'])
+            'is_active' => (int) isset($_POST['is_active']),
+            'is_featured' => (int) isset($_POST['is_featured'])
         ]);
 
         Session::success('Produkt wurde erstellt.');
@@ -160,8 +160,8 @@ class ProductController
             'sale_price' => !empty($_POST['sale_price']) ? (float) $_POST['sale_price'] : null,
             'stock' => (int) $_POST['stock'],
             'sku' => $_POST['sku'] ?? null,
-            'is_active' => isset($_POST['is_active']),
-            'is_featured' => isset($_POST['is_featured'])
+            'is_active' => (int) isset($_POST['is_active']),
+            'is_featured' => (int) isset($_POST['is_featured'])
         ];
 
         // Neues Bild?
@@ -196,13 +196,22 @@ class ProductController
             return;
         }
 
-        // Bild löschen
-        if ($product['image']) {
-            $this->deleteImage($product['image']);
+        try {
+            Product::delete($id);
+            // Bild nur löschen wenn DB-Delete erfolgreich
+            if ($product['image']) {
+                $this->deleteImage($product['image']);
+            }
+            Session::success('Produkt wurde gelöscht.');
+        } catch (\PDOException $e) {
+            // Falls Produkt in Bestellungen verwendet wird (Foreign Key Constraint)
+            if ($e->getCode() === '23000') {
+                Product::update($id, ['is_active' => 0]);
+                Session::warning('Produkt ist in Bestellungen enthalten und wurde daher nur deaktiviert (nicht gelöscht).');
+            } else {
+                throw $e;
+            }
         }
-
-        Product::delete($id);
-        Session::success('Produkt wurde gelöscht.');
         redirect('/admin/produkte');
     }
 

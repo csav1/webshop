@@ -131,6 +131,13 @@ class Router
             if (preg_match($pattern, $uri, $matches)) {
                 // Parameter extrahieren
                 $this->params = array_filter($matches, fn($key) => !is_numeric($key), ARRAY_FILTER_USE_KEY);
+                
+                // Typ-Konvertierung für numerische Parameter (wichtig für strict_types)
+                foreach ($this->params as $key => $value) {
+                    if (is_numeric($value)) {
+                        $this->params[$key] = (int) $value;
+                    }
+                }
 
                 // Middleware ausführen
                 foreach ($routeConfig['middleware'] as $middleware) {

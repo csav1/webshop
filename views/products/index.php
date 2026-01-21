@@ -53,7 +53,7 @@ $searchQuery = $searchQuery ?? null;
                         </li>
                         <?php foreach ($categories as $cat): ?>
                             <li>
-                                <a href="<?= url('/produkte?kategorie=' . e($cat['slug'])) ?>"
+                                <a href="<?= url('/kategorie/' . e($cat['slug'])) ?>"
                                     class="block py-2 px-3 rounded-lg transition-colors <?= $currentCategory === $cat['slug'] ? 'bg-nba-red/10 text-nba-red font-medium' : 'hover:bg-gray-100' ?>">
                                     <?= e($cat['name']) ?>
                                     <span class="text-gray-400 text-sm ml-1">(
@@ -69,6 +69,7 @@ $searchQuery = $searchQuery ?? null;
                 <div>
                     <h4 class="font-medium text-gray-700 mb-3">Suche</h4>
                     <form action="<?= url('/produkte') ?>" method="get">
+                        <input type="hidden" name="url" value="produkte">
                         <input type="text" name="suche" value="<?= e($searchQuery ?? '') ?>"
                             placeholder="Produkt suchen..."
                             class="w-full bg-gray-100 rounded-lg px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-nba-red/50">

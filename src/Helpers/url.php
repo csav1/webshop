@@ -7,9 +7,18 @@
 /**
  * Vollständige URL generieren
  */
-function url(string $path = ''): string
+/**
+ * Vollständige URL generieren
+ */
+function url(string $path = '', bool $isAsset = false): string
 {
-    $config = require __DIR__ . '/../../config/app.php';
+    // Caching der Config verhindern wir hier der Einfachheit halber nicht, 
+    // aber wir laden sie.
+    static $config = null;
+    if ($config === null) {
+        $config = require __DIR__ . '/../../config/app.php';
+    }
+    
     $baseUrl = $config['url'] ?? '';
 
     if (empty($baseUrl)) {
@@ -21,7 +30,24 @@ function url(string $path = ''): string
         $baseUrl = $protocol . '://' . $host . $basePath;
     }
 
-    return rtrim($baseUrl, '/') . '/' . ltrim($path, '/');
+    $url = rtrim($baseUrl, '/');
+
+    // Nginx-Fix für lab03: Query-Routing nutzen, wenn wir auf dem Server sind
+    // und es kein Asset oder die Startseite ist.
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    // Wir aktivieren dies pauschal für die Production URL oder wenn der User es braucht via Config
+    // Hier hardcoded wir den Check auf die Domain oder aktivieren es, wenn ein Query-Routing benötigt wird.
+    // Nginx-Fix für lab03: Query-Routing nutzen, wenn wir auf dem Server sind
+    $needsQueryRouting = str_contains(strtolower($host), 'htl-md.dev');
+
+    if ($needsQueryRouting && !$isAsset && !empty($path) && $path !== '/') {
+        // Sicherstellen, dass wir nicht doppelt index.php haben
+        if (!str_contains($url, 'index.php')) {
+             return $url . '/index.php?url=' . ltrim($path, '/');
+        }
+    }
+
+    return $url . '/' . ltrim($path, '/');
 }
 
 /**
@@ -29,7 +55,8 @@ function url(string $path = ''): string
  */
 function asset(string $path): string
 {
-    return url('/assets/' . ltrim($path, '/'));
+    // Assets sind echte Dateien, daher kein Query-Routing ($isAsset = true)
+    return url('/assets/' . ltrim($path, '/'), true);
 }
 
 /**

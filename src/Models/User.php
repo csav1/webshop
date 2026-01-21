@@ -118,7 +118,7 @@ class User extends Model
      */
     public static function deactivate(int $userId): bool
     {
-        return self::update($userId, ['is_active' => false]);
+        return self::update($userId, ['is_active' => 0]);
     }
 
     /**
@@ -126,7 +126,7 @@ class User extends Model
      */
     public static function activate(int $userId): bool
     {
-        return self::update($userId, ['is_active' => true]);
+        return self::update($userId, ['is_active' => 1]);
     }
 
     /**

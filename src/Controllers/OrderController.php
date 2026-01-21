@@ -87,6 +87,12 @@ class OrderController
             return;
         }
 
+        // Zahlungsmethode für DB anpassen (Mapping DE -> ENUM)
+        $paymentMethod = $_POST['payment_method'];
+        if ($paymentMethod === 'kreditkarte') {
+            $paymentMethod = 'creditcard';
+        }
+
         try {
             $order = Order::createOrder(
                 Auth::id(), // Kann null sein
@@ -98,7 +104,7 @@ class OrderController
                     'country' => $_POST['shipping_country'] ?? 'Deutschland',
                     'phone' => $_POST['shipping_phone'] ?? null
                 ],
-                $_POST['payment_method'],
+                $paymentMethod,
                 Cart::getItems()
             );
 

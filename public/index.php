@@ -51,7 +51,8 @@ foreach (glob($helpersPath . '*.php') as $helper) {
 // Konfiguration laden
 // ================================
 // Debug Logging
-file_put_contents(__DIR__ . '/debug.txt', date('Y-m-d H:i:s') . " Request: " . $_SERVER['REQUEST_URI'] . "\n", FILE_APPEND);
+// Debug Logging entfernt für Produktion
+
 
 // Konfiguration laden
 $config = require __DIR__ . '/../config/app.php';
@@ -79,9 +80,8 @@ $basePath = str_replace('\\', '/', $scriptDir); // Windows Backslash Fix
 
 // Logging für Debugging
 $method = $_SERVER['REQUEST_METHOD'];
-$logFile = __DIR__ . '/request.log';
-$logData = date('Y-m-d H:i:s') . " | Method: $method | URI: " . $_SERVER['REQUEST_URI'] . " | BasePath: $basePath | URL Param: " . ($_GET['url'] ?? 'NULL') . "\n";
-file_put_contents($logFile, $logData, FILE_APPEND);
+// Logging entfernt für Produktion
+
 
 // URI bereinigen
 if (strpos($uri, $basePath) === 0) {

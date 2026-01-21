@@ -45,10 +45,10 @@
                     Bearbeiten
                 </a>
                 
-                <form action="<?= url('/admin/kategorien/' . $category['id'] . '/loeschen') ?>" method="post" class="contents" onsubmit="return confirm('Kategorie wirklich löschen?');">
+                <form action="<?= url('/admin/kategorien/' . $category['id'] . '/loeschen') ?>" method="post" class="contents">
                     <?= \Core\View::csrf() ?>
                     <button type="submit" 
-                            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-red-50 text-gray-400 hover:text-red-600 transition-colors">
+                            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-red-50 text-red-500 transition-colors">
                         <i class="fas fa-trash"></i>
                     </button>
                 </form>

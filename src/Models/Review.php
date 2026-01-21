@@ -108,7 +108,7 @@ class Review extends Model
             'rating' => $data['rating'],
             'title' => $data['title'] ?? null,
             'content' => $data['content'] ?? null,
-            'verified_purchase' => $verifiedPurchase,
+            'verified_purchase' => (int) $verifiedPurchase,
             'is_approved' => true // Auto-Approve, optional Moderation
         ]);
     }

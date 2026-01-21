@@ -40,18 +40,19 @@
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
             <?php
             $icons = [
-                'trikots' => '🏀',
-                'caps' => '🧢',
-                'basketbaelle' => '⛹️',
-                'sneakers' => '👟',
-                'accessoires' => '🎒'
+                'trikots' => 'fas fa-tshirt',
+                'caps-muetzen' => 'fas fa-hat-cowboy', // Alternative für Caps
+                'sneaker' => 'fas fa-shoe-prints',
+                'basketbaelle' => 'fas fa-basketball-ball',
+                'hoodies-jacken' => 'fas fa-vest',
+                'accessoires' => 'fas fa-shopping-bag'
             ];
             foreach ($categories as $cat):
                 ?>
-                <a href="<?= url('/produkte?kategorie=' . e($cat['slug'])) ?>"
+                <a href="<?= url('/kategorie/' . e($cat['slug'])) ?>"
                     class="bg-white rounded-2xl p-6 text-center card-hover shadow-md group">
-                    <span class="text-4xl mb-3 block group-hover:scale-110 transition-transform">
-                        <?= $icons[$cat['slug']] ?? '📦' ?>
+                    <span class="text-4xl mb-3 block group-hover:scale-110 transition-transform text-nba-blue group-hover:text-nba-red">
+                        <i class="<?= $icons[$cat['slug']] ?? 'fas fa-box' ?>"></i>
                     </span>
                     <span class="font-semibold text-gray-800 group-hover:text-nba-red transition-colors">
                         <?= e($cat['name']) ?>

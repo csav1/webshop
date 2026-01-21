@@ -16,11 +16,16 @@ class ProductController
     /**
      * Alle Produkte anzeigen (mit optionalem Kategoriefilter)
      */
-    public function index(): void
+    /**
+     * Alle Produkte anzeigen (mit optionalem Kategoriefilter)
+     */
+    public function index(?string $categorySlug = null, ?string $search = null): void
     {
         $page = (int) ($_GET['page'] ?? 1);
-        $categorySlug = $_GET['kategorie'] ?? null;
-        $search = $_GET['suche'] ?? null;
+        
+        // Parameter Priorität: Argument > GET
+        $categorySlug = $categorySlug ?? $_GET['kategorie'] ?? null;
+        $search = $search ?? $_GET['suche'] ?? null;
 
         $seoTitle = 'Alle Produkte';
         $seoDescription = 'Entdecken Sie unser komplettes Sortiment an NBA Merchandise.';
@@ -106,8 +111,8 @@ class ProductController
      */
     public function category(string $slug): void
     {
-        $_GET['kategorie'] = $slug;
-        $this->index();
+        // Direkt an index übergeben, nicht über globale $_GET
+        $this->index($slug);
     }
 
     /**
@@ -121,8 +126,7 @@ class ProductController
             redirect('/produkte');
         }
 
-        $_GET['suche'] = $query;
-        $this->index();
+        $this->index(null, $query);
     }
 
     /**

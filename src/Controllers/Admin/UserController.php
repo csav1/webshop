@@ -117,7 +117,7 @@ class UserController
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'role' => $_POST['role'],
-            'is_active' => isset($_POST['is_active'])
+            'is_active' => (int) isset($_POST['is_active'])
         ]);
 
         Session::success('Benutzer wurde aktualisiert.');

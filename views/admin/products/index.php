@@ -87,9 +87,9 @@
                                 <?php endif; ?>
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <form action="<?= url('/admin/produkte/' . $product['id'] . '/loeschen') ?>" method="post" class="inline-block" onsubmit="return confirm('Wirklich löschen?');">
+                                <form action="<?= url('/admin/produkte/' . $product['id'] . '/loeschen') ?>" method="post" class="inline-block">
                                     <?= \Core\View::csrf() ?>
-                                    <div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="flex items-center justify-end gap-2">
                                         <a href="<?= url('/admin/produkte/' . $product['id'] . '/bearbeiten') ?>" 
                                            class="w-8 h-8 flex items-center justify-center rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
                                            title="Bearbeiten">

@@ -77,7 +77,7 @@ class CategoryController
             'name' => $_POST['name'],
             'description' => $_POST['description'] ?? null,
             'image' => $imageName,
-            'is_active' => isset($_POST['is_active'])
+            'is_active' => (int) isset($_POST['is_active'])
         ]);
 
         Session::success('Kategorie wurde erstellt.');
@@ -136,7 +136,7 @@ class CategoryController
         $data = [
             'name' => $_POST['name'],
             'description' => $_POST['description'] ?? null,
-            'is_active' => isset($_POST['is_active'])
+            'is_active' => (int) isset($_POST['is_active'])
         ];
 
         // Neues Bild?
@@ -197,7 +197,7 @@ class CategoryController
             return;
         }
 
-        Category::update($id, ['is_active' => !$category['is_active']]);
+        Category::update($id, ['is_active' => (int) !$category['is_active']]);
 
         $status = $category['is_active'] ? 'deaktiviert' : 'aktiviert';
         Session::success("Kategorie wurde {$status}.");

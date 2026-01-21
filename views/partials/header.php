@@ -36,7 +36,7 @@ $user = Auth::user();
                             Alle Produkte
                         </a>
                         <?php foreach ($categories as $cat): ?>
-                            <a href="<?= url('/produkte?kategorie=' . e($cat['slug'])) ?>"
+                            <a href="<?= url('/kategorie/' . e($cat['slug'])) ?>"
                                 class="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-nba-red">
                                 <?= e($cat['name']) ?>
                             </a>
@@ -48,6 +48,7 @@ $user = Auth::user();
             <!-- Search -->
             <div class="hidden lg:flex items-center flex-1 max-w-md mx-8">
                 <form action="<?= url('/produkte') ?>" method="get" class="w-full">
+                    <input type="hidden" name="url" value="produkte">
                     <div class="relative">
                         <input type="text" name="suche" placeholder="Produkte suchen..."
                             class="w-full bg-gray-100 rounded-full px-5 py-2 pr-10 outline-none focus:ring-2 focus:ring-nba-red/50 transition-all">
@@ -128,7 +129,7 @@ $user = Auth::user();
             <a href="<?= url('/') ?>" class="block py-2 text-gray-700"><i class="fas fa-home mr-2"></i> Startseite</a>
             <a href="<?= url('/produkte') ?>" class="block py-2 text-gray-700"><i class="fas fa-basketball mr-2"></i> Produkte</a>
             <?php foreach ($categories as $cat): ?>
-                <a href="<?= url('/produkte?kategorie=' . e($cat['slug'])) ?>" class="block py-2 text-gray-500 pl-6">
+                <a href="<?= url('/kategorie/' . e($cat['slug'])) ?>" class="block py-2 text-gray-500 pl-6">
                     <?= e($cat['name']) ?>
                 </a>
             <?php endforeach; ?>

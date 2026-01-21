@@ -1,13 +1,8 @@
-# Minimal .htaccess for debugging
-Require all granted
-DirectoryIndex index.php
+RewriteEngine On
 
-<IfModule mod_rewrite.c>
-    Options +FollowSymLinks
-    RewriteEngine On
-    RewriteBase /webshop/public/
+# Falls die angeforderte Datei oder Verzeichnis existiert, liefere sie direkt aus
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
-</IfModule>
+# Ansonsten leite alles an index.php weiter
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

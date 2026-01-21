@@ -15,7 +15,7 @@ use Core\Auth;
             <i class="fas fa-shopping-cart text-nba-blue mr-2"></i> Warenkorb
         </h1>
         <?php if (!empty($items)): ?>
-            <form action="<?= url('/warenkorb/leeren') ?>" method="post" onsubmit="return confirm('Warenkorb wirklich leeren?');">
+            <form action="<?= url('/warenkorb/leeren') ?>" method="post">
                 <button type="submit" class="text-red-500 hover:text-red-700 font-medium flex items-center gap-2">
                     <i class="fas fa-trash-alt"></i> Alle entfernen
                 </button>

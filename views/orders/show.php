@@ -134,13 +134,7 @@
 
 
 
-             <!-- Support Contact -->
-             <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                <p class="text-sm text-blue-800 font-medium mb-2">Fragen zur Bestellung?</p>
-                <a href="<?= url('/kontakt') ?>" class="text-sm text-nba-blue hover:underline flex items-center gap-1">
-                    <i class="fas fa-envelope"></i> Kontaktieren Sie uns
-                </a>
-            </div>
+
 
         </div>
     </div>
